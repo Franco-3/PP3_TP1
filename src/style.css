@@ -1,0 +1,10 @@
+.formulario{
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    box-shadow: 0px 2px 13px #262626;
+}
+.strong{
+    font-weight: 600;
+}
