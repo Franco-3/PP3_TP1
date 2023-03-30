@@ -26,6 +26,14 @@
 
         <label for="inputPassword5" class="form-label strong">Contraseña</label>
         <input required type="password" id="inputPassword5" placeholder="Ingrese su contraseña" class="form-control" aria-labelledby="passwordHelpBlock">
+
+        <div id="message">
+            <h3>La contraseña debe contener:</h3>
+            <p id="letter" class="invalid" ><b>letra minuscula</b></p>
+            <p id="capital" class="invalid" ><b>Una letra mayuscula</b></p>
+            <p id="number" class="invalid" ><b>Un numero</b></p>
+            <p id="length" class="invalid" ><b>Minumo 8 caracteres</b></p>
+        </div>
         
         <div class="col-auto mt-3">
             <button type="submit" class="btn btn-primary mb-3">Registrarse</button>
