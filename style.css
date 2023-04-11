@@ -1,0 +1,23 @@
+.formulario{
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    box-shadow: 0px 2px 13px #262626;
+}
+.strong{
+    font-weight: 600;
+}
+.list-group-item {
+    background-color: #f5f5f5;
+    color: #333333;
+  }
+.container-listado{
+    margin-top: 0 auto;
+     padding: 20px;
+      }
+
+.titulo-listado{
+    text-align: center;
+}
+  
