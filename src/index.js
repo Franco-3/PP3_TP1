@@ -1,20 +1,48 @@
 const express = require("express");
-const router = require("./routes");
+const morgan = require('morgan');
+const router = express.Router();
+const {engine} = require('express-handlebars')
+const path = require('path');
+
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
+app.set('port', process.env.PORT || 4000);
+app.set('views', path.join(__dirname, 'views'))
+app.engine('.hbs', engine({
+  defaultLayout: 'main',
+  layoutDir: path.join(app.get('views'), 'layouts'),
+  partialsDir: path.join(app.get('views'), 'partials'),
+  extname: '.hbs',
+  helpers: require('./lib/handlebars')
+}));
+app.set('view engine', '.hbs');
+
+
+app.use(morgan('dev'));
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-app.use("/posts", router);
-app.use((error, req, res, next) => {
-  res.status(400).json({
-    code: 400,
-    message: error.stack,
-  });
+
+app.use((req, res, next) => {
+
+  next();
+})
+
+
+app.use(require('./routes'));
+app.use(require('./routes/authentication'));
+app.use('/users', require('./routes/users'));
+
+
+
+
+app.listen(app.get('port'), () => {
+  console.log("App listening on port", app.get('port'));
 });
 
-app.listen(8000, () => {
-  console.log("App listening on port 8000!");
+/*
+router.get('/', function(req, res, next){
+  res.render('main/main.html', { title: 'Express'});
 });
-
+*/
 module.exports = app;

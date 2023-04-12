@@ -3,7 +3,7 @@
     class cConexion{
 
         public static function conexionBD(){
-            $host = '127.0.0.1:33065';
+            $host = 'localhost'; //'127.0.0.1:33065';
             $bdname = 'pp3tp1bd';
             $usuario ='root';
             $pasword = '';

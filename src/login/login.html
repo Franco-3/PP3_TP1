@@ -16,17 +16,19 @@
     <div class="formulario">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label strong">Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su email">
+            <input id="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su email">
         </div>
         <label for="inputPassword5" class="form-label strong">Contraseña</label>
-        <input type="password" id="inputPassword5" placeholder="Ingrese su contraseña" class="form-control" aria-labelledby="passwordHelpBlock">
+        <input id="password" type="password" id="inputPassword5" placeholder="Ingrese su contraseña" class="form-control" aria-labelledby="passwordHelpBlock">
         
         <div class="col-auto mt-3">
-            <button type="submit" class="btn btn-primary mb-3">Iniciar Sesión</button>
+            <button type="submit" onclick="login()" class="btn btn-primary mb-3">Iniciar Sesión</button>
         </div>
 
         <a href="../register/register.html">¿No tiene una cuenta? Créase uno ahora!</a>
     </div>
 
+
+    <script src="login.js"></script>
 </body>
 </html>
