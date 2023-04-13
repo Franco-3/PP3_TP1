@@ -29,14 +29,5 @@ pool.getConnection((err, connection) => {
 });
 
 pool.query = promisify(pool.query);
-/*
-connection.connect(function(error) {
-    if (error) {
-        throw error;
-    }
-    else{
-        console.log('MySQL database is connected Successfully');
-    }
-});
-*/
+
 module.exports = pool;
