@@ -1,0 +1,17 @@
+ <div class="formulario container text-center" style="margin-top: 30px;">
+        
+        <h1 style="text-align: center; margin: 30px;">Bienvenido</h1>
+        <div class="col">
+            <button name="login" type="button" onclick="redirect('login')" class="btn btn-primary mb-3">Iniciar Sesión</button>
+        </div>
+        <div class="col">
+            <button name="register" type="button" onclick="redirect('register')" class="btn btn-primary mb-3">Registrarse</button>
+        </div>
+
+    </div>
+
+    <script>
+        function redirect(page){
+            location.href = "../" + page + "/" + page + ".hbs";
+        }
+    </script>

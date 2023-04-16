@@ -1,0 +1,25 @@
+<div class="container">
+    <link rel="stylesheet" href="../style.css">
+
+    <h1 style="text-align: center; margin: 30px;">Iniciar Sesión</h1>
+
+    <form class="formulario" action="/signin" method="POST">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label strong">Email</label>
+            <input id="email" type="email" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su email">
+        </div>
+        <label for="inputPassword5" class="form-label strong">Contraseña</label>
+        <input id="password" type="password" name="password" id="inputPassword5" placeholder="Ingrese su contraseña" class="form-control" aria-labelledby="passwordHelpBlock">
+        
+        <div class="col-auto mt-3">
+            <button type="submit" onclick="login()" class="btn btn-primary mb-3">Iniciar Sesión</button>
+        </div>
+
+        <a href="../register/register.html">¿No tiene una cuenta? Créase uno ahora!</a>
+    </form>
+
+
+    <script src="login.js"></script>
+
+</div>
+    
