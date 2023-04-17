@@ -1,17 +1,22 @@
- <div class="formulario container text-center" style="margin-top: 30px;">
-        
-        <h1 style="text-align: center; margin: 30px;">Bienvenido</h1>
-        <div class="col">
-            <button name="login" type="button" onclick="redirect('login')" class="btn btn-primary mb-3">Iniciar Sesión</button>
-        </div>
-        <div class="col">
-            <button name="register" type="button" onclick="redirect('register')" class="btn btn-primary mb-3">Registrarse</button>
-        </div>
 
-    </div>
 
-    <script>
-        function redirect(page){
-            location.href = "../" + page + "/" + page + ".hbs";
-        }
-    </script>
+<main class="index">
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h1 class="mb-5">Bienvenido al Gestor de usuarios</h1>
+            <div class="col mb-4">
+                <button name="login" type="button" onclick="redirect('signin')" class="btn btn-primary mb-3">Iniciar Sesión</button>
+            </div>
+            <div class="col mb-4">
+                <button name="register" type="button" onclick="redirect('signup')" class="btn btn-primary mb-3">Registrarse</button>
+            </div>
+        </div>
+    </header>
+
+</main>
+
+<script>
+    function redirect(page){
+        location.href = "../" + page ;
+    }
+</script>

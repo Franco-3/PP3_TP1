@@ -3,11 +3,13 @@ const router = express.Router();
 
 const pool = require('../database');
 
-router.get('/add', (req, res) => {
+const { isLoggedIn } = require('../lib/auth');
+
+router.get('/add', isLoggedIn, (req, res) => {
     res.render('add');
 });
 
-router.post('/add', async (req, res) =>{
+router.post('/add', isLoggedIn, async (req, res) =>{
     const { name, mail, password } = req.body;
     const newUser = {
         Nombre: name,
@@ -20,26 +22,25 @@ router.post('/add', async (req, res) =>{
     res.redirect('/users');
 });
 
-router.get('/', async (req, res) => {
+router.get('/', isLoggedIn, async (req, res) => {
     const users = await pool.query('SELECT * FROM usuarios');
-    console.log(users);
     res.render('users', { users });
 });
 
-router.get('/delete/:id', async (req, res) => {
+router.get('/delete/:id', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM usuarios WHERE idUsuario = ?', [id]);
     req.flash('success', 'Usuario eliminado correctamente');
     res.redirect('/users');
 });
 
-router.get('/edit/:id', async (req, res) => {
+router.get('/edit/:id', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     const usuario = await pool.query('SELECT * FROM usuarios WHERE idUsuario = ?', [id]);
     res.render('edit', {usuario: usuario[0]});
 });
 
-router.post('/edit/:id', async (req, res) => {
+router.post('/edit/:id', isLoggedIn, async (req, res) => {
     const {id} = req.params;
     const {name, mail, password} = req.body;
     const newUser = {
@@ -47,7 +48,6 @@ router.post('/edit/:id', async (req, res) => {
         Correo: mail,
         Contraseña: password
     };
-    console.log(newUser);
     pool.query('UPDATE usuarios set ? WHERE idUsuario = ?', [newUser, id]);
     req.flash('success', 'Usuario actualizado correctamente');
     res.redirect('/users');

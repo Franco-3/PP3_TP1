@@ -1,13 +1,28 @@
 
 
-    <div class="formulario container text-center" style="margin-top: 30px;">
-        
-        <h1 style="text-align: center; margin: 30px;">Bienvenido {{user.Nombre}}</h1>
-        
-        <div class="col">
-            <button name="logout" type="button" onclick="alert('deslogear')" class="btn btn-danger mb-3">Cerrar sesion</button>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col md-4 mx-auto">
+                <div class="card text-center">
+                    <div class="card-doby">
+                        <h3>Bienvenido/a {{user.Nombre}}</h3>
+                    </div>
+                    <div class="row">
+                        <h4>Correo electronico: {{user.Correo}}</h4>
+                    </div>
+                    <div class="row">
+                        <h4>Permisos del usuario: 
+                            {{#if user.rolUsuario}}
+                                Administrador
+                            {{else}}
+                                Usuario comun
+                            {{/if}}
+                        </h4>
+                    </div>
+                    <a href="" class="btn btn-danger m-4">Otra pagina</a>
+                </div>
+            </div>
         </div>
-
     </div>
 
     <script src="main.js"></script>

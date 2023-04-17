@@ -57,16 +57,12 @@ app.use(require('./routes'));
 app.use(require('./routes/authentication'));
 app.use('/users', require('./routes/users'));
 
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.listen(app.get('port'), () => {
   console.log("App listening on port", app.get('port'));
 });
 
-/*
-router.get('/', function(req, res, next){
-  res.render('main/main.html', { title: 'Express'});
-});
-*/
+
 module.exports = app;
