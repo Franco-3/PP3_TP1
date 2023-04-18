@@ -37,8 +37,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`idRol`, `Descripcion`) VALUES
-(0, 'Administrador'),
-(1, 'Usuario');
+(0, 'Usuario'),
+(1, 'Administrador');
 
 -- --------------------------------------------------------
 
@@ -59,9 +59,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `Nombre`, `Correo`, `Contraseña`, `rolUsuario`) VALUES
-(1, 'Marta Lopez', 'marlopez@hotmail.com', '12356', 1),
-(2, 'Mario Ortiz', 'ortizmario@hotmail.com', '12378', 1),
-(3, 'Martin Fernandez', 'madmin@hotmail.com', 'admin', 0);
+(1, 'Marta Lopez', 'marlopez@hotmail.com', '12356', 0),
+(2, 'Mario Ortiz', 'ortizmario@hotmail.com', '12378', 0),
+(3, 'Martin Fernandez', 'madmin@hotmail.com', 'admin', 1);
 
 --
 -- Índices para tablas volcadas
